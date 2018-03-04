@@ -1,0 +1,24 @@
+app:
+  build: docker/php
+  working_dir: /app
+  volumes:
+    - ./src:/var/www/html/
+    - ./docker/apache/config/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+  ports:
+    - 8081:80
+  links:
+    - db
+  environment:
+    XDEBUG_CONFIG: "idekey=PHPSTORM remote_enable=On remote_connect_back=On"
+
+db:
+  image: mysql:5.7
+  volumes:
+    - /var/lib/mysql
+  ports:
+    - "33061:3306"
+  environment:
+    MYSQL_DATABASE: geekforless
+    MYSQL_USER: geekforless
+    MYSQL_PASSWORD: geekforless
+    MYSQL_ROOT_PASSWORD: geekforless
