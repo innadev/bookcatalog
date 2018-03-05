@@ -1,4 +1,6 @@
 <? include_once 'block/front_top.php' ?>
+<? include_once 'message.php' ?>
+
 
     <div>
         <form class="form-horizontal" method="post" action="">
@@ -6,7 +8,7 @@
                 <label class="control-label col-sm-4" for="boo">Книга: </label>
                 <div class="col-sm-10">
 
-                    <h3><?= isset($book['title']) ? $book['title'] : '' ?></h3>
+                    <h3><?= isset($book['title']) ? htmlentities($book['title']) : '' ?></h3>
 
                 </div>
             </div>
@@ -43,10 +45,11 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-success">Отправить заказ</button>
-                    <a href="/index.php" class=" btn btn-primary">Отменить</a>
+                    <a href="/index.php" class=" btn btn-primary">Назад</a>
                 </div>
             </div>
         </form>
     </div>
 
 <? include_once 'block/front_bottom.php' ?>
+

@@ -2,10 +2,10 @@
 	
 	<div>	
 		<div class = "book-item">
-			<h3><?=$book['title']?></h3><br>
-			<em>Автор: <?=$book['author']?> </em><br>
-			<em>Жанр: <?=$book['genre']?> </em><br><br>
-			<p>Описание:<br> <?=$book['description']?></p><br>
+			<h3><?=htmlspecialchars($book['title'])?></h3><br>
+			<em>Автор: <?=htmlspecialchars($book['author'])?> </em><br>
+			<em>Жанр: <?=htmlspecialchars($book['genre'])?> </em><br><br>
+			<p>Описание:<br> <?=htmlspecialchars($book['description'])?></p><br>
 			<em>Цена: <?=$book['price']?></em>
 		</div>
 		

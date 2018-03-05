@@ -11,6 +11,6 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class = "col-md-6"><h1>Book catalog</h1></div>
-        <div class = "col-md-6"><a href="admin">Панель администратора</a></div>
+        <div class = "col-md-9"><h1>Book catalog</h1></div>
+        <div class = "col-md-3"><a href="admin">Панель администратора</a></div>
     </div>

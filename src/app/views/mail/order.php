@@ -262,25 +262,35 @@
                                         <table border="1" cellpadding="0" cellspacing="0" class="btn btn-primary">
                                             <tbody>
                                             <tr>
-                                                <td>Title</td>
-                                                <td>Count</td>
-                                                <td>Price</td>
+                                                <td align="center">Title</td>
+                                                <td align="center">Count</td>
+                                                <td align="center">Price</td>
                                             </tr>
                                             <tr>
                                                 <td><?=$macro['book']?></td>
-                                                <td><?=$macro['count']?></td>
-                                                <td><?=$macro['price']?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Total:</td>
-                                                <td></td>
-                                                <td><?=$macro['count'] * $macro['price']?></td>
+                                                <td align="center"><?=$macro['count']?></td>
+                                                <td align="center"><?=$macro['price']?></td>
                                             </tr>
                                             </tbody>
                                         </table>
                                         <br>
-                                        <p><?=$macro['user_name']?></p>
-                                        <p><?=$macro['user_address']?></p>
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td>Total:</td>
+                                                <td colspan="2"><?=$macro['count'] * $macro['price']?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Name:</t>
+                                                <td colspan="2"><?=$macro['user_name']?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Delivery address:</t>
+                                                <td colspan="2"><?=$macro['user_address']?></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <br>
                                     </td>
                                 </tr>
                             </table>

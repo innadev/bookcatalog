@@ -2,6 +2,7 @@
 
 use App\Models\BookModel;
 use App\Core\Redirect;
+use App\Core\Sanitizer;
 
 require_once '../../app/bootstrap.php';
 
@@ -11,7 +12,7 @@ $bookModel = new BookModel();
 switch($action) {
     case "add":
         if(!empty($_POST)) {
-            $bookModel->create($_POST);
+            $bookModel->create(Sanitizer::sanitize($_POST));
             Redirect::toAdminIndex();
         }
 
@@ -26,7 +27,7 @@ switch($action) {
         $id = (int) $_GET['id'];
 
         if(!empty($_POST) && $id > 0){
-            $bookModel->update($id, $_POST);
+            $bookModel->update($id, Sanitizer::sanitize($_POST));
             Redirect::toAdminIndex();
         }
 
@@ -35,7 +36,7 @@ switch($action) {
         break;
 
     case "delete":
-        $book = $bookModel->delete($_GET['id']);
+        $book = $bookModel->delete((int) $_GET['id']);
         Redirect::toAdminIndex();
         break;
 

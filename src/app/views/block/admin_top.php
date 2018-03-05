@@ -13,7 +13,7 @@
     <div class="row">
         <div class = "col-md-6"><h1>Book catalog</h1></div>
     </div>
-    <div class="container"><a href="index.php?action=add" class=" btn btn-primary">Добавить статью</a>
+    <div class="container"><a href="index.php?action=add" class=" btn btn-primary">Добавить книгу</a>
         <a href="/index.php" class=" btn btn-primary">На главную</a>
     </div>
     <br>

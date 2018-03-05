@@ -9,12 +9,12 @@
             </tr>
             <?php foreach ($books as $b): ?>
                 <tr>
-                    <th><?= $b['title'] ?></th>
+                    <th><?= htmlspecialchars($b['title']) ?></th>
                     <th>
-                        <a href="index.php?action=edit&id=<?= $b['id'] ?>">Редактировать</a>
+                        <a href="index.php?action=edit&id=<?= (int) $b['id'] ?>">Редактировать</a>
                     </th>
                     <th>
-                        <a href="index.php?action=delete&id=<?= $b['id'] ?>">Удалить</a>
+                        <a href="index.php?action=delete&id=<?= (int) $b['id'] ?>">Удалить</a>
                     </th>
                 </tr>
             <?php endforeach ?>
