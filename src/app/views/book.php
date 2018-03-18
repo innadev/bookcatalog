@@ -3,8 +3,16 @@
 	<div>	
 		<div class = "book-item">
 			<h3><?=htmlspecialchars($book['title'])?></h3><br>
-			<em>Автор: <?=htmlspecialchars($book['author'])?> </em><br>
-			<em>Жанр: <?=htmlspecialchars($book['genre'])?> </em><br><br>
+			<em>Автор:
+                <?foreach ($book_authors[$book['id']] as $author):?>
+                    <?=safe_out($author, 'name')?>,
+                <?endforeach;?>
+            </em><br>
+			<em>Жанр:
+                <?foreach ($book_genres[$book['id']] as $genre):?>
+                    <?=safe_out($genre, 'name')?>,
+                <?endforeach;?>
+            </em><br><br>
 			<p>Описание:<br> <?=htmlspecialchars($book['description'])?></p><br>
 			<em>Цена: <?=$book['price']?></em>
 		</div>

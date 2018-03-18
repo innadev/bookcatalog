@@ -4,9 +4,10 @@ namespace App\Core;
 
 class Redirect
 {
-    public static function toAdminIndex()
+    public static function toAdmin($section)
     {
-        header("Location: index.php");
-        die;
+        $url = route_admin($section);
+        header("Location: " . $url);
+        exit;
     }
 }

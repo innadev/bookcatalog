@@ -8,8 +8,6 @@
                 <h3>
                     <a href="book.php?id=<?= (int) $b['id'] ?>"><?= htmlspecialchars($b['title']) ?></a>
                 </h3><br>
-                <em>Жанр: <?= htmlspecialchars($b['genre']) ?></em><br>
-                <em>Автор: <?= htmlspecialchars($b['author']) ?></em><br>
                 <p>Описание книги: <?= htmlspecialchars(books_intro($b['description'])) ?></p><br>
             </div>
         <?php endforeach ?>
@@ -20,8 +18,8 @@
                 <?php foreach ($genres as $genre): ?>
                     <ul>
                         <li>
-                            <a href="/?filter[genre]=<?=htmlspecialchars($genre)?>">
-                                <?=ucfirst(htmlspecialchars($genre))?>
+                            <a href="/?filter[genre]=<?=safe_out($genre, 'id')?>">
+                                <?=safe_out($genre, 'name')?>
                             </a>
                         </li>
                     </ul>
@@ -33,8 +31,8 @@
                 <?php foreach ($authors as $author): ?>
                     <ul>
                         <li>
-                            <a href="/?filter[author]=<?=htmlspecialchars($author)?>">
-                                <?=ucfirst(htmlspecialchars($author))?>
+                            <a href="/?filter[author]=<?=safe_out($author, 'id')?>">
+                                <?=safe_out($author, 'name')?>
                             </a>
                         </li>
                     </ul>

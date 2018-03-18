@@ -8,7 +8,10 @@ class Sanitizer
     {
         $sanitized = [];
         foreach ($items as $key =>$item) {
-            $sanitized[$key] = strip_tags(trim($item));
+            if (is_string($item)) {
+                $sanitized[$key] = strip_tags(trim($item));
+            }
+            $sanitized[$key] = $item;
         }
         return $sanitized;
     }
